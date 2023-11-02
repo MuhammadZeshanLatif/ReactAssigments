@@ -7,7 +7,7 @@ const Assigments = () => {
             <ReactForm></ReactForm>
             
             <ReacAssigment2Button></ReacAssigment2Button>
-            
+            <ReactOnCloseBtn></ReactOnCloseBtn>
         </>
     )
 }
@@ -73,5 +73,12 @@ const ReactImage = () => {
     )
  }
  //Assigment 3
+ const ReactOnCloseBtn=()=>{
+    return(
+        <>
+        <button onClick={() => window.close()}>Close</button>
+        </>
+    )
+ }
 
 export default Assigments;
