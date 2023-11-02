@@ -13,8 +13,8 @@ const ReactButton = () => {
     return (
         <>
             <button
-                onDoubleClick={()=>{alert("Alert That")}}
-                onClick={()=>{console.log('single Click')}}
+                onDoubleClick={() => { alert("Alert That") }}
+                onClick={() => { console.log('single Click') }}
             >Button
             </button>
         </>
@@ -23,8 +23,12 @@ const ReactButton = () => {
 const ReactForm = () => {
     return (
         <>
-            <form onBlur={()=>{console.log("OnBlur")}} onFocus={()=>{console.log("onFocud")}}>
-                <input type="text" />
+            <form onBlur={() => { console.log("OnBlur") }} onFocus={() => { console.log("onFocud") }}>
+                <input
+                    onCopy={() => console.log("somethig is copied")}
+                    onCut={() => console.log("somethig is Cut")}
+                    onPaste={() => console.log("somethig is Paste")}
+                    type="text" />
             </form>
         </>
     )
