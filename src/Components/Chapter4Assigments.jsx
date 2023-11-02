@@ -1,14 +1,17 @@
-const Assigment1 = () => {
+const Assigments = () => {
     return (
         <>
             <ReactImage></ReactImage>
-            <br />
+            <br/>
             <ReactButton></ReactButton>
             <ReactForm></ReactForm>
+            
+            <ReacAssigment2Button></ReacAssigment2Button>
+            
         </>
     )
 }
-
+ //Assigment 1
 const ReactButton = () => {
     return (
         <>
@@ -29,11 +32,12 @@ const ReactForm = () => {
                     onCut={() => console.log("somethig is Cut")}
                     onPaste={() => console.log("somethig is Paste")}
                     type="text" />
+                    
             </form>
         </>
     )
 }
-const ReactImage = (e) => {
+const ReactImage = () => {
     const image = document.querySelector('#image');
     const sizeIncrease = () => {
         console.log(image.width);
@@ -57,4 +61,17 @@ const ReactImage = (e) => {
         </>
     )
 }
-export default Assigment1;
+//Assigment 2
+ const ReacAssigment2Button=()=>{
+    return(
+        <>
+        <form onSubmit={(e)=>{e.preventDefault()}}  action="">
+            <input type="text" name="" id="" />
+            <input  type="Submit" name="" id="" />
+        </form>
+        </>
+    )
+ }
+ //Assigment 3
+
+export default Assigments;

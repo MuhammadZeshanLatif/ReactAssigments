@@ -1,9 +1,9 @@
 import './App.css'
-import Assigment1 from './Components/Chapter4Assigment1';
+import Assigments from './Components/Chapter4Assigments';
 const App = () => {
   return (
     <>
-      <Assigment1></Assigment1>
+      <Assigments></Assigments>
     </>
   )
 }
