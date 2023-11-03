@@ -2,25 +2,8 @@ import { useState } from 'react';
 import './App.css'
 import Assigments from './Components/Chapter4Assigments';
 const App = () => {
-  let cardData = [{
-    "id": 1,
-    "title": "First Image",
-    "views": "1.9K",
-    "Likes": "1K",
-    "verified": false
-  }, {
-    "id": 2,
-    "title": "Second Image",
-    "views": "2.9K",
-    "Likes": "2K",
-    "verified": true
-  }, {
-    "id": 3,
-    "title": "Third Image",
-    "views": "3.9K",
-    "Likes": "3K",
-    "verified": false
-  }]
+  let cardData = [];
+  let [videos, setvideos] = useState(cardData);
   let Playbtn = () => {
     console.log('play')
   }
@@ -29,7 +12,18 @@ const App = () => {
   }
   return (
     <>
-      {cardData.map((data) => (
+      <div>
+        <button onClick={()=>{
+          setvideos([...videos,{
+            "id": videos.length+1,
+            "title": `Image ${Math.floor(Math.random() * 100)}`,
+            "views": `${(Math.random() * 10).toFixed(2)}K`,
+            "Likes": `${(Math.random() * 10).toFixed(2)}K`,
+            "verified": Math.random() >= 0.5
+          }])
+        }}>Add</button>
+      </div>
+      {videos.map((data) => (
         <ReactCard
           id={data.id}
           title={data.title}
@@ -53,7 +47,7 @@ const ReactCard = ({ id, title, views, verification, likes, children }) => {
           <p>{views}</p>
           <p>{likes}</p>
         </div>
-        <p>Verified:{verification ? " ✅" : " "}</p>
+        <p>Verified:{verification ? " ✅" : "❌"}</p>
         <h3>{title}</h3>
         <div>{children}</div>
       </div>
@@ -74,10 +68,9 @@ const Buttons = ({ children, play, pause }) => {
     flag = !flag;
     setBtnStatus(!btnStatus)
   }
-
   return (
     <>
-      <button onClick={playPause}>{btnStatus?"play":"pause"}</button>
+      <button onClick={playPause}>{btnStatus ? "play" : "pause"}</button>
     </>
   )
 }
